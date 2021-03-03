@@ -1,0 +1,51 @@
+﻿<Page x:Class="TestingLegion.Page4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestingLegion"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="Page4">
+
+    <Grid Background="#FFE8E8E8">
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="auto" VerticalAlignment="Top">
+            <!--КНОПКА ВОЗВРАТА-->
+            <Button x:Name="ButtonPrew" Grid.Row="0" BorderBrush="White" Width="32" Height="32" HorizontalAlignment="Left"  Margin="5,5,5,5" Background="White" Click="ButtonPrew_Click">
+                <Image Source="Images/arrowBack.png"></Image>
+            </Button>
+            <!--КНОПКА СЛЕДУЮЩАЯ СТРАНИЦА-->
+            <Button x:Name="ButtonNext" Grid.Row="0" BorderBrush="White"  Width="32" Height="32" Background="White"  Margin="5,5,5,5" Click="ButtonNext_Click" >
+                <Image Source="Images/NextArrow.png"></Image>
+
+            </Button>
+        </StackPanel>
+
+        <Grid   Margin="0,42,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="3.	Какими двумя числами следует заменить знаки вопроса?" FontSize="16" HorizontalAlignment="Center"></Label>
+            <Label Grid.Row="1" Content="12 17 15 20 18 ? ?" FontSize="16" FontWeight="Bold"></Label>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <CheckBox x:Name="Answer1" Content="20 22" Margin="5,5,5,5" Checked="Answer1_Checked" ></CheckBox>
+                <CheckBox x:Name="Answer2" Content="22 20" Margin="5,5,5,5" Checked="Answer2_Checked" ></CheckBox>
+                <CheckBox x:Name="Answer3" Content="23 20" Margin="5,5,5,5" Checked="Answer3_Checked" ></CheckBox>
+                <!--correct answer-->
+                <CheckBox x:Name="Answer4" Content="23 21" Margin="5,5,5,5" Checked="Answer4_Checked"></CheckBox>
+                <CheckBox x:Name="Answer5" Content="24 21" Margin="5,5,5,5" Checked="Answer5_Checked" ></CheckBox>
+            </StackPanel>
+            <Button x:Name="ButtonAccept" Grid.Row="3" Content="Принять результат" FontSize="16" Width="150" Height="40" Margin="5,5,5,5" Click="ButtonAccept_Click"></Button>
+            <Label Grid.Row="4" x:Name="LabelAnswer" Content="Ответ не верный" FontSize="16" Foreground="Red" Visibility="Hidden"></Label>
+            <TextBlock Grid.Row="5" x:Name="Explication" Text="TEXT" TextWrapping="Wrap" FontSize="16" Foreground="Red" Visibility="Hidden"></TextBlock>
+        </Grid>
+    </Grid>
+</Page>
